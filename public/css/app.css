@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+body{
+    font-family: 'DM Sans', sans-serif;
+}
+.btn-bleu {
+    background-color: #5C7CFA;
+    color: white;
+    transition: .3s;
+}
+.btn-bleu:hover {
+    background-color: #3c53ac;
+    color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.452);
+}
+.bg-bleu {
+    background-color: #5C7CFA;
+}
+.lien-actuel {
+    background-color: #5C7CFA;
+    color: white;
+    font-weight: 500;
+}
+.lien-actuel:hover {
+    background-color: #5C7CFA;
+    color: white;
+}
+.autre-lien {
+    border: solid 1px white;
+    color: white;
+}
+.autre-lien:hover {
+    background-color: #5C7CFA;
+    color: white;
+    border: solid 1px #5C7CFA;
+}
+.autre-lien:focus { 
+    border: solid 1px #5C7CFA;
+    color: white;
+}
+.small-text {
+    font-size: 0.7em;
+    color: gainsboro;
+}
+.hero {
+    margin-top: 175px;
+    margin-bottom: 100px;
+}
+.white-shadow {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.452);
+}
+.bg {
+    background-image: url("../images/femme-valise.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -3;
+}
+.bg-2 {
+    background-image: url("../images/vide-aeroport.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -3;
+}
+.bg-dark-opacity {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+}.custom-shape-divider-top-1745201171 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+.custom-shape-divider-top-1745201171 svg {
+    position: relative;
+    display: block;
+    width: calc(148% + 1.3px);
+    height: 183px;
+}
