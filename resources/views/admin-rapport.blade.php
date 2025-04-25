@@ -89,14 +89,6 @@
                 </div>
             </header>
             
-            <!-- Barre de recherche -->
-            <div class="row mb-4 g-4">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Rechercher</button>
-                </form>
-            </div>
-            
             <!-- Carte contenant le tableau des activités -->
             <div class="card shadow-sm border-0 mt-5 h-75">
                 <!-- En-tête de la carte -->

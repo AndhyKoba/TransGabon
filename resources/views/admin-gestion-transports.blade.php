@@ -88,17 +88,201 @@
                     </div>
                 </div>
             </header>
-            
-            <!-- Barre de recherche -->
-            <div class="row mb-4 g-4">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Rechercher</button>
-                </form>
+
+            <!-- Boutons d'actions -->
+            <div class="row mb-4 g-3">
+                <!-- Bouton Ajouter un voyage -->
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ajouterVoyageModal">
+                        <i class='bx bx-plus'></i> Ajouter un transport
+                    </button>
+                </div>
+                
+                <!-- Bouton Modifier un voyage -->
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#modifierVoyageModal">
+                        <i class='bx bx-edit'></i> Modifier un transport
+                    </button>
+                </div>
+                
+                <!-- Bouton Supprimer un voyage -->
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#supprimerVoyageModal">
+                        <i class='bx bx-trash'></i> Supprimer un transport
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Ajouter un voyage -->
+            <div class="modal fade" id="ajouterVoyageModal" tabindex="-1" aria-labelledby="ajouterVoyageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!-- En-tête du modal -->
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title" id="ajouterVoyageModalLabel">Ajouter un nouveau transport</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <!-- Corps du modal -->
+                        <div class="modal-body">
+                            <form>
+                                <div class="row g-3">
+                                    <!-- Sélection du moyen de transport -->
+                                    <div class="col-md-6">
+                                        <label for="transportVoyage">Moyens de transport</label>
+                                        <select class="form-select shadow-sm" id="transportVoyage">
+                                            <option selected>🚀 Transport</option>
+                                            <option value="avion">✈️ Avion</option>
+                                            <option value="bateau">🚢 Bateau</option>
+                                            <option value="train">🚆 Train</option>
+                                            <option value="bus">🚌 Bus</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Champ Départ -->
+                                    <div class="col-md-6">
+                                        <label for="departVoyage">Départ</label>
+                                        <input type="text" class="form-control shadow-sm" list="destinations" id="departVoyage" placeholder="Départ">
+                                        <datalist id="destinations">
+                                            <option value="Libreville"></option>
+                                            <option value="Port-Gentil"></option>
+                                            <option value="Franceville"></option>
+                                            <option value="Moanda"></option>
+                                            <option value="Mouila"></option>
+                                            <option value="Lambaréné"></option>
+                                            <option value="Oyem"></option>
+                                            <option value="Tchibanga"></option>
+                                            <option value="Makokou"></option>
+                                        </datalist>
+                                    </div>
+                                    
+                                    <!-- Champ Arrivée -->
+                                    <div class="col-md-6">
+                                        <label for="arriveeVoyage">Arrivée</label>
+                                        <input type="text" class="form-control shadow-sm" list="destinations" id="arriveeVoyage" placeholder="Départ">
+                                        <datalist id="destinations">
+                                            <option value="Libreville"></option>
+                                            <option value="Port-Gentil"></option>
+                                            <option value="Franceville"></option>
+                                            <option value="Moanda"></option>
+                                            <option value="Mouila"></option>
+                                            <option value="Lambaréné"></option>
+                                            <option value="Oyem"></option>
+                                            <option value="Tchibanga"></option>
+                                            <option value="Makokou"></option>
+                                        </datalist>
+                                    </div>
+                                    
+                                    <!-- Champ Date -->
+                                    <div class="col-md-6">
+                                        <label for="date">Date</label>
+                                        <input type="date" class="form-control shadow-sm" id="date">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Pied du modal -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-primary">Enregistrer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Modifier un voyage -->
+            <div class="modal fade" id="modifierVoyageModal" tabindex="-1" aria-labelledby="modifierVoyageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!-- En-tête du modal -->
+                        <div class="modal-header bg-warning text-dark">
+                            <h5 class="modal-title" id="modifierVoyageModalLabel">Modifier un transport</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <!-- Corps du modal -->
+                        <div class="modal-body">
+                            <form>
+                                <!-- Sélection du voyage à modifier -->
+                                <div class="mb-3">
+                                    <label for="selectVoyage" class="form-label">Sélectionner le transport</label>
+                                    <select class="form-select" id="selectVoyage">
+                                        <option selected>Sélectionner un voyage...</option>
+                                        <option value="1">Avion - Libreville/Oyem - 12/04/2025</option>
+                                        <option value="2">Mouila - Moanda</option>
+                                        <option value="3">Franceville - Oyem</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Formulaire de modification -->
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="editNom" class="form-label">Nom</label>
+                                        <input type="text" class="form-control" id="editNom">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="editPrenom" class="form-label">Prénom</label>
+                                        <input type="text" class="form-control" id="editPrenom">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="editEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="editEmail">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="editTelephone" class="form-label">Téléphone</label>
+                                        <input type="tel" class="form-control" id="editTelephone">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Pied du modal -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-warning">Mettre à jour</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Supprimer un voyage -->
+            <div class="modal fade" id="supprimerVoyageModal" tabindex="-1" aria-labelledby="supprimerVoyageModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- En-tête du modal -->
+                        <div class="modal-header bg-danger text-white">
+                            <h5 class="modal-title" id="supprimerVoyageModalLabel">Supprimer un transport</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <!-- Corps du modal -->
+                        <div class="modal-body">
+                            <p>Êtes-vous sûr de vouloir supprimer ce voyage ? Cette action est irréversible.</p>
+                            
+                            <!-- Sélection du voyage à supprimer -->
+                            <div class="mb-3">
+                                <label for="deleteVoyage" class="form-label">Sélectionner le transport à supprimer</label>
+                                <select class="form-select" id="deleteVoyage">
+                                    <option selected>Sélectionner un voyage...</option>
+                                    <option value="1">Libreville - Port-Gentil</option>
+                                    <option value="2">Mouila - Moanda</option>
+                                    <option value="3">Franceville - Oyem</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Pied du modal -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-danger">Confirmer la suppression</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- Carte contenant le tableau des transports -->
-            <div class="card shadow-sm border-0 mt-5 h-75 ">
+            <div class="card shadow-sm border-0 mt-5" style="height: 60vh;">
                 <!-- En-tête de la carte -->
                 <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Transports Disponibles</h5>
@@ -112,11 +296,10 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Moyen de Transport</th>
-                                    <th>Description</th>
-                                    <th>Agent</th>
-                                    <th>Date</th>
-                                    <th>Statut</th>
+                                    <th>Type</th>
+                                    <th>Compagnie</th>
+                                    <th>Capacité</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             
@@ -127,32 +310,60 @@
                                     <td>Avion</td>
                                     <td>Port-Gentil à Libreville</td>
                                     <td>Marie</td>
-                                    <td>10/05/2025</td>
-                                    <td><span class="badge bg-success">Terminé</span></td>
+                                    <td>
+                                        <!-- Boutons d'actions -->
+                                        <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modifierVoyageModal">
+                                            <i class='bx bx-edit'></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#supprimerVoyageModal">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>#TR-002</td>
                                     <td>Bateau</td>
                                     <td>Lambaréné à Mouila</td>
                                     <td>Marie</td>
-                                    <td>11/02/2025</td>
-                                    <td><span class="badge bg-warning">En cours</span></td>
+                                    <td>
+                                        <!-- Boutons d'actions -->
+                                        <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modifierVoyageModal">
+                                            <i class='bx bx-edit'></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#supprimerVoyageModal">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>#TR-003</td>
                                     <td>Train</td>
                                     <td>Franceville à Port-Gentil</td>
                                     <td>Paul</td>
-                                    <td>11/05/2025</td>
-                                    <td><span class="badge bg-warning">En cours</span></td>
+                                    <td>
+                                        <!-- Boutons d'actions -->
+                                        <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modifierVoyageModal">
+                                            <i class='bx bx-edit'></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#supprimerVoyageModal">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>#TR-004</td>
                                     <td>Bus</td>
                                     <td>Libreville à Oyem</td>
                                     <td>Justine</td>
-                                    <td>22/05/2025</td>
-                                    <td><span class="badge bg-info">Planifié</span></td>
+                                    <td>
+                                        <!-- Boutons d'actions -->
+                                        <button class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modifierVoyageModal">
+                                            <i class='bx bx-edit'></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#supprimerVoyageModal">
+                                            <i class='bx bx-trash'></i>
+                                        </button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

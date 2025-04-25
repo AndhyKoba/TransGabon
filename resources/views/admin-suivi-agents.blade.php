@@ -89,14 +89,6 @@
                 </div>
             </header>
             
-            <!-- Barre de recherche -->
-            <div class="row mb-4 g-4">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Rechercher</button>
-                </form>
-            </div>
-            
             <!-- Boutons d'actions -->
             <div class="row mb-4 g-3">
                 <!-- Bouton Ajouter un agent -->

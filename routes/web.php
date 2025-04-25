@@ -10,6 +10,10 @@ Route::get('/acceuil', function () {
     return view('accueil');
 });
 
+Route::get('/recherche', function () {
+    return view('recherche-reservation');
+});
+
 Route::get('/connexion', function () {
     return view('choix-compte');
 });
